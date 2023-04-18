@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MoviesDashboardModule } from './components/movies-dashboard/movies-dashboard.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MoviesDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
