@@ -1,18 +1,62 @@
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
+  background-color: #333f4f;
   color: white;
   font-weight: 600;
+  &-logo {
+    left: 100px;
+    position: absolute;
+    cursor: pointer;
+    &-txt {
+      position: relative;
+      bottom: 12px;
+      margin-left: 10px;
+      font-family: sans-serif;
+    }
+  }
+  &-actions {
+    position: absolute;
+    right: 100px;
+    &-about {
+      margin-left: 5px;
+    }
+  }
 }
 .content {
-  position: fixed;
-  top: 60px;
   min-width: 100%;
   min-height: 100%;
+}
+::ng-deep .select-btn {
+  .p-button {
+    background-color: #71ba9d;
+  }
+}
+::ng-deep .unSelect-btn {
+  .p-button {
+    background-color: transparent;
+  }
+}
+::ng-deep .p-button {
+  height: 37px;
+  background-color: transparent;
+  border: transparent;
+  padding: 8px;
+  .p-button-icon-left {
+    margin-right: 0.7rem;
+  }
+  .p-button-label {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .pi {
+    font-size: 0.9rem;
+  }
+  &:enabled:hover {
+    background-color: #71ba9d;
+  }
+  &:focus {
+    box-shadow: none;
+  }
 }

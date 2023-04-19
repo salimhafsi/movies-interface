@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesDashboardComponent } from './movies-dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { SearchMoviesComponent } from './search-movies/search-movies.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
     children: [{
       path: '',
       component: HomeComponent
+    },
+    {
+      path: 'search',
+      component: SearchMoviesComponent
     }]
   }
 ];
