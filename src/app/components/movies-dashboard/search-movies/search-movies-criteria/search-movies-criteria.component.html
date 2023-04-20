@@ -1,1 +1,37 @@
-<p>search-movies-criteria works!</p>
+<div class="content">
+  <form [formGroup]="searchForm">
+    <div class="content-criteria">
+      <div class="content-criteria-label">
+        <span>Title</span>
+      </div>
+      <div>
+        <input type="text" formControlName="title" pInputText />
+      </div>
+    </div>
+    <div class="content-criteria">
+      <div class="content-criteria-label">
+        <span>Type</span>
+      </div>
+      <div>
+        <p-dropdown [options]="Types" formControlName="type"></p-dropdown>
+      </div>
+    </div>
+    <div class="content-criteria">
+      <div class="content-criteria-label">
+        <span>Year of release</span>
+      </div>
+      <div>
+        <input type="text" formControlName="releaseYear" pInputText />
+      </div>
+    </div>
+    <div>
+      <p-button
+        label="Search"
+        [ngClass]="{
+          'btn-diasabled': searchForm.controls['title'].value === ''
+        }"
+        (click)="searchMovie()"
+      ></p-button>
+    </div>
+  </form>
+</div>
