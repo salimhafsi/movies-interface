@@ -2,4 +2,10 @@
   <app-search-movies-criteria
     (searchMovies)="searchMovies($event)"
   ></app-search-movies-criteria>
+  <div class="display-movies">
+    <display-movies
+      [moviesData]="moviesData$ | async"
+      (loadMoviesByPageNumber)="loadMoviesByPageNumber($event)"
+    ></display-movies>
+  </div>
 </div>
