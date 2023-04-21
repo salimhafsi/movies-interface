@@ -1,3 +1,6 @@
+<div *ngIf="loading" class="loading">
+  <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+</div>
 <div *ngIf="moviesInfo" class="table-content">
   <div *ngIf="moviesInfo.Response !== 'False'; else emptyData">
     <p-table [value]="moviesInfo.Search">
@@ -15,10 +18,10 @@
               height="45"
             />
             <span class="description"
-              ><span class="title">{{ movies.Title }}</span
-              >&nbsp; <span>({{ movies.Year }})</span>&nbsp;
-              <span>(TV {{ movies.Type | titlecase }}) </span></span
-            >
+              ><span class="title">{{ movies.Title }} </span> ({{
+                movies.Year
+              }}) (TV {{ movies.Type | titlecase }})
+            </span>
           </td>
         </tr>
       </ng-template>

@@ -4,6 +4,7 @@
   ></app-search-movies-criteria>
   <div class="display-movies">
     <display-movies
+      [loading]="loading"
       [moviesData]="moviesData$ | async"
       (loadMoviesByPageNumber)="loadMoviesByPageNumber($event)"
     ></display-movies>

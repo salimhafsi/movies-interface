@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { moviesDataModel } from 'src/app/models/model';
 import { isEmpty } from 'lodash';
 @Component({
@@ -17,6 +10,7 @@ export class DisplayMoviesComponent {
   moviesInfo: moviesDataModel;
   totalResults: number;
   rows = 10;
+  @Input() loading: boolean;
   /*
      Movies data an input parametre that has the movies informations.
      Get the data and the total result from the movies data input to pass its to the view. 
