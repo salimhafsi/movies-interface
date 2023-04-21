@@ -1,9 +1,43 @@
 .table-content {
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 15px;
-  .paginator {
+  &-paginator {
     margin-top: 10px;
     margin-bottom: 12px;
     height: 135px;
+  }
+  &-error {
+    text-align: center;
+    color: #525355;
+    font-family: sans-serif;
+  }
+  .description {
+    position: relative;
+    bottom: 16px;
+    font-family: sans-serif;
+    left: 11px;
+    .title {
+      color: #5e75a4;
+    }
+  }
+}
+:host ::ng-deep .p-paginator {
+  padding: 1px;
+  .p-paginator-pages {
+    .p-paginator-page {
+      border-radius: 0;
+    }
+  }
+}
+:host ::ng-deep .p-paginator {
+  .p-paginator-current {
+    color: #929395;
+  }
+}
+:host ::ng-deep .p-datatable {
+  padding: 4px;
+  background-color: white;
+  .p-datatable-tbody > tr > td {
+    padding: 0;
   }
 }

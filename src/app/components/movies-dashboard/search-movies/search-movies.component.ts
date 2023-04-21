@@ -11,12 +11,13 @@ import { MoviesService } from 'src/app/services/movies-service';
 export class SearchMoviesComponent {
   moviesData$: Observable<moviesDataModel>;
   criteria: CriteriaFormModel;
+  pageNumber = 1;
   constructor(private moviesService: MoviesService) {}
   /*
      Search movies using criteria form.
   */
   searchMovies(criteria: CriteriaFormModel) {
-    this.moviesData$ = this.moviesService.getMovies(criteria);
+    this.moviesData$ = this.moviesService.getMovies(criteria, this.pageNumber);
     this.criteria = criteria;
   }
   /*
@@ -24,5 +25,6 @@ export class SearchMoviesComponent {
   */
   loadMoviesByPageNumber(pageNumber) {
     this.moviesData$ = this.moviesService.getMovies(this.criteria, pageNumber);
+    this.pageNumber = pageNumber;
   }
 }

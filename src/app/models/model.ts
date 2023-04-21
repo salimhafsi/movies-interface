@@ -13,6 +13,7 @@ export interface moviesDataModel {
   Search: movieModel[];
   totalResults: string;
   Response: string;
+  Error: string;
 }
 export interface movieModel {
   Title: string;

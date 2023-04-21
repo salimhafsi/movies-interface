@@ -8,7 +8,10 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class MoviesService {
   private API_URL = environment.API_URL;
   constructor(protected httpClient: HttpClient) {}
-
+  /*
+    Methode to get movies list using criteria form and paginator page number.
+    Passing criteria as http params.
+  */
   getMovies(criteria: CriteriaFormModel, pageNumber?: number) {
     let params = new HttpParams();
     params = params.append('s', `${criteria.title}`);
