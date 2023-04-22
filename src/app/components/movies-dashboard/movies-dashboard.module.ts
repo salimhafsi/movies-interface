@@ -17,6 +17,8 @@ import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import { SearchMoviesCriteriaComponent } from './search-movies/search-movies-criteria/search-movies-criteria.component';
 import { MovieInformationsComponent } from './search-movies/movie-informations/movie-informations.component';
 import { SeparatorPipe } from 'src/app/pipes/separator.pipe';
+import { LanguageCodePipe } from 'src/app/pipes/language-code.pipe';
+import { CountyCodePipe } from 'src/app/pipes/country-code.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { SeparatorPipe } from 'src/app/pipes/separator.pipe';
     DisplayMoviesComponent,
     MovieInformationsComponent,
     SeparatorPipe,
+    CountyCodePipe,
+    LanguageCodePipe,
   ],
   imports: [
     CommonModule,

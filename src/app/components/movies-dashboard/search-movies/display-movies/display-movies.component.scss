@@ -29,8 +29,15 @@
     }
   }
 }
+.gray-background {
+  background-color: #f6f6f4;
+}
+.white-background {
+  background-color: #fbfbfb;
+}
 :host ::ng-deep .p-paginator {
   padding: 1px;
+  border-radius: 0;
   .p-paginator-pages {
     .p-paginator-page {
       border-radius: 0;

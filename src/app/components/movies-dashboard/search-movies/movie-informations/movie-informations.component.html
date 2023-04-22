@@ -9,8 +9,8 @@
           ? movieInformations.Poster
           : 'assets/movies-assets/poster-alt.png'
       "
-      width="85"
-      height="130"
+      width="100"
+      height="150"
     />
   </div>
   <div class="informations-txt">
@@ -26,26 +26,42 @@
       </div>
     </div>
     <div class="informations-txt-content">
-      <div>
+      <div *ngIf="movieInformations.Director !== 'N/A'">
         <span class="informations-txt-content-key">Directors: </span>
         <span class="informations-txt-content-value">{{
-          movieInformations.Director
+          movieInformations.Director | separatorPipe
         }}</span>
       </div>
-      <div>
+      <div *ngIf="movieInformations.Writer !== 'N/A'">
         <span class="informations-txt-content-key">Writers: </span>
         <span class="informations-txt-content-value">{{
           movieInformations.Writer | separatorPipe
         }}</span>
       </div>
-      <div>
+      <div *ngIf="movieInformations.Actors !== 'N/A'">
         <span class="informations-txt-content-key">Actors: </span>
         <span class="informations-txt-content-value">{{
           movieInformations.Actors | separatorPipe
         }}</span>
       </div>
-      <div>
-        <span class="fi fi-gr"></span>
+      <div *ngIf="movieInformations.Country !== 'N/A'">
+        <span class="informations-txt-content-key">Origin: </span>
+        <span *ngFor="let country of movieInformations.Country.split(',')">
+          <span class="fi fi-{{ country | countyCodePipe | lowercase }}"></span>
+          <span> | </span>
+        </span>
+        <span *ngIf="movieInformations.Language !== 'N/A'">
+          <span class="informations-txt-content-key">Language: </span>
+          <span class="informations-txt-content-value">{{
+            movieInformations.Language | languageCodePipe
+          }}</span>
+        </span>
+      </div>
+      <div *ngIf="movieInformations.Genre !== 'N/A'">
+        <span class="informations-txt-content-key">Genres: </span>
+        <span class="informations-txt-content-value">{{
+          movieInformations.Genre | separatorPipe
+        }}</span>
       </div>
     </div>
   </div>
