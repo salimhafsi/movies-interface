@@ -8,12 +8,15 @@ import { MoviesService } from 'src/app/services/movies-service';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
+import { DialogModule } from 'primeng/dialog';
 import { HomeComponent } from './home/home.component';
 import { MoviesDashboardRoutingModule } from './movies-dashboard-routing.module';
 import { MoviesDashboardComponent } from './movies-dashboard.component';
 import { DisplayMoviesComponent } from './search-movies/display-movies/display-movies.component';
 import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import { SearchMoviesCriteriaComponent } from './search-movies/search-movies-criteria/search-movies-criteria.component';
+import { MovieInformationsComponent } from './search-movies/movie-informations/movie-informations.component';
+import { SeparatorPipe } from 'src/app/pipes/separator.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { SearchMoviesCriteriaComponent } from './search-movies/search-movies-cri
     SearchMoviesComponent,
     SearchMoviesCriteriaComponent,
     DisplayMoviesComponent,
+    MovieInformationsComponent,
+    SeparatorPipe,
   ],
   imports: [
     CommonModule,
@@ -34,6 +39,7 @@ import { SearchMoviesCriteriaComponent } from './search-movies/search-movies-cri
     HttpClientModule,
     TableModule,
     PaginatorModule,
+    DialogModule,
   ],
   providers: [MoviesService],
 })

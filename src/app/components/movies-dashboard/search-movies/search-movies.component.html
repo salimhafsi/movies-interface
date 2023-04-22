@@ -4,9 +4,21 @@
   ></app-search-movies-criteria>
   <div class="display-movies">
     <display-movies
-      [loading]="loading"
+      [moviesDataLoading]="moviesDataLoading"
       [moviesData]="moviesData$ | async"
       (loadMoviesByPageNumber)="loadMoviesByPageNumber($event)"
+      (showMovieInformations)="showMovieInformations($event)"
     ></display-movies>
   </div>
 </div>
+<p-dialog
+  [(visible)]="showMovieInfoDialog"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [modal]="true"
+>
+  <movie-informations
+    [movieInformations]="movieInformations$ | async"
+    [movieInfoLoading]="movieInfoLoading"
+  ></movie-informations>
+</p-dialog>

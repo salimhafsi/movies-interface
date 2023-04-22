@@ -1,0 +1,45 @@
+.loading {
+  text-align: center;
+  margin-top: 7px;
+  color: #71ba9d;
+  &-spinner {
+    font-size: 2rem;
+  }
+}
+.informations {
+  display: flex;
+  &-image {
+    img {
+      padding: 4px;
+      border: 1px solid;
+      color: #e1e1e1;
+    }
+  }
+  &-txt {
+    margin-left: 15px;
+    &-header {
+      margin-bottom: 15px;
+      &-title {
+        font-weight: 500;
+        font-size: 17px;
+      }
+      &-info {
+        font-size: 14px;
+        &-year {
+          color: #ad524d;
+          font-weight: 500;
+        }
+      }
+    }
+    &-content {
+      font-size: 14px;
+      &-key {
+        font-weight: 700;
+      }
+      &-value {
+        color: #ad524d;
+        font-weight: 500;
+      }
+    }
+  }
+}

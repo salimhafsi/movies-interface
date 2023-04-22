@@ -1,7 +1,10 @@
 .loading {
   text-align: center;
   margin-top: 7px;
-  color: #525355;
+  color: #71ba9d;
+  &-spinner {
+    font-size: 2rem;
+  }
 }
 .table-content {
   margin-top: 25px;
@@ -44,5 +47,6 @@
   background-color: white;
   .p-datatable-tbody > tr > td {
     padding: 0;
+    cursor: pointer;
   }
 }

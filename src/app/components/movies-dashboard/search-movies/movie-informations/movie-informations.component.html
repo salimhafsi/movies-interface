@@ -1,0 +1,49 @@
+<div *ngIf="movieInfoLoading" class="loading">
+  <i class="pi pi-spin pi-spinner loading-spinner"></i>
+</div>
+<div *ngIf="movieInformations" class="informations">
+  <div class="informations-image">
+    <img
+      [src]="
+        movieInformations.Poster !== 'N/A'
+          ? movieInformations.Poster
+          : 'assets/movies-assets/poster-alt.png'
+      "
+      width="85"
+      height="130"
+    />
+  </div>
+  <div class="informations-txt">
+    <div class="informations-txt-header">
+      <div class="informations-txt-header-title">
+        {{ movieInformations.Title }}
+      </div>
+      <div class="informations-txt-header-info">
+        {{ movieInformations.Type | titlecase }},
+        <span class="informations-txt-header-info-year">{{
+          movieInformations.Year
+        }}</span>
+      </div>
+    </div>
+    <div class="informations-txt-content">
+      <div>
+        <span class="informations-txt-content-key">Directors: </span>
+        <span class="informations-txt-content-value">{{
+          movieInformations.Director
+        }}</span>
+      </div>
+      <div>
+        <span class="informations-txt-content-key">Writers: </span>
+        <span class="informations-txt-content-value">{{
+          movieInformations.Writer | separatorPipe
+        }}</span>
+      </div>
+      <div>
+        <span class="informations-txt-content-key">Actors: </span>
+        <span class="informations-txt-content-value">{{
+          movieInformations.Actors | separatorPipe
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>

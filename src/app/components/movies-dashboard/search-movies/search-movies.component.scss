@@ -11,3 +11,20 @@
     height: 100%;
   }
 }
+:host ::ng-deep .p-dialog {
+  .p-dialog-header-icons {
+    z-index: 1;
+  }
+  .p-dialog-content {
+    padding: 16px;
+    position: absolute;
+    width: 100%;
+  }
+  .p-dialog-header {
+    padding: 10px;
+  }
+  .p-dialog-content:last-of-type {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}

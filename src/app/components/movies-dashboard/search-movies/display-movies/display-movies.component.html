@@ -1,13 +1,12 @@
-<div *ngIf="loading" class="loading">
-  <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+<div *ngIf="moviesDataLoading" class="loading">
+  <i class="pi pi-spin pi-spinner loading-spinner"></i>
 </div>
 <div *ngIf="moviesInfo" class="table-content">
   <div *ngIf="moviesInfo.Response !== 'False'; else emptyData">
     <p-table [value]="moviesInfo.Search">
       <ng-template pTemplate="body" let-movies>
         <tr>
-          <td>
-            <img />
+          <td (click)="onShowMovieInformations(movies.imdbID)">
             <img
               [src]="
                 movies.Poster !== 'N/A'

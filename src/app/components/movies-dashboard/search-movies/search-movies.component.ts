@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Observable, filter, tap } from 'rxjs';
-import { CriteriaFormModel, moviesDataModel } from 'src/app/models/model';
+import {
+  CriteriaFormModel,
+  MovieInformationsModel,
+  MoviesDataModel,
+} from 'src/app/models/model';
 import { MoviesService } from 'src/app/services/movies-service';
 import { isEmpty } from 'lodash';
 @Component({
@@ -9,24 +13,27 @@ import { isEmpty } from 'lodash';
   styleUrls: ['./search-movies.component.scss'],
 })
 export class SearchMoviesComponent {
-  moviesData$: Observable<moviesDataModel>;
+  moviesData$: Observable<MoviesDataModel>;
+  movieInformations$: Observable<MovieInformationsModel>;
   criteria: CriteriaFormModel;
   pageNumber = 1;
-  loading = false;
+  moviesDataLoading = false;
+  movieInfoLoading = false;
+  showMovieInfoDialog = false;
   constructor(private moviesService: MoviesService) {}
   /*
      Search movies using criteria form.
   */
   searchMovies(criteria: CriteriaFormModel) {
+    this.moviesDataLoading = true;
     this.criteria = criteria;
-    this.loading = true;
     this.loadMovies();
   }
   /*
      Load movies data using the paginator page changing. 
   */
   loadMoviesByPageNumber(pageNumber) {
-    this.loading = true;
+    this.moviesDataLoading = true;
     this.pageNumber = pageNumber;
     this.loadMovies();
   }
@@ -35,7 +42,17 @@ export class SearchMoviesComponent {
       .getMovies(this.criteria, this.pageNumber)
       .pipe(
         filter((data) => !isEmpty(data)),
-        tap(() => (this.loading = false))
+        tap(() => (this.moviesDataLoading = false))
+      );
+  }
+  showMovieInformations(id: string) {
+    this.showMovieInfoDialog = true;
+    this.movieInfoLoading = true;
+    this.movieInformations$ = this.moviesService
+      .getMovieInformationsById(id)
+      .pipe(
+        filter((data) => !isEmpty(data)),
+        tap(() => (this.movieInfoLoading = false))
       );
   }
 }
