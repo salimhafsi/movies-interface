@@ -17,7 +17,10 @@ export class MoviesDashboardComponent implements OnInit, OnDestroy {
     if (this.router.url === '/search') {
       this.btnIsSelected = true;
     }
-    // Select the search btn when navigate to search page
+    /*
+     * Select the search button when navigate to search page.
+     * Unselect search button when leave the search page
+     */
     this.selectSearchBtn();
   }
   selectSearchBtn() {

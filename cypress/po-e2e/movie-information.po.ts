@@ -28,3 +28,6 @@ export const getMovieInformartionLanguage = () => {
 export const getMovieInformartionGenres = () => {
   return cy.get('[data-cy=cy-movie-information-genres]');
 };
+export const getMovieInformartionCloseBtn = () => {
+  return cy.get('.p-dialog-header-close');
+};

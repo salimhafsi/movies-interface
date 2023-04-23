@@ -13,9 +13,9 @@ export class MoviesService {
   private API_URL = environment.API_URL;
   constructor(protected httpClient: HttpClient) {}
   /*
-    Get movies list using criteria form and paginator page number.
-    Passing criteria as http params.
-  */
+   * Get movies list using criteria form and paginator page number.
+   * Passing criteria as http params.
+   */
   getMovies(criteria: CriteriaFormModel, pageNumber?: number) {
     let params = new HttpParams();
     params = params.append('s', `${criteria.title}`);
@@ -30,6 +30,10 @@ export class MoviesService {
     }
     return this.httpClient.get<MoviesDataModel>(`${this.API_URL}`, { params });
   }
+  /*
+   * Get movie's information by id.
+   * Passing movie's is as a http params.
+   */
   getMovieInformationsById(id: string) {
     let params = new HttpParams();
     params = params.append('i', `${id}`);

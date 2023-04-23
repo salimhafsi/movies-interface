@@ -1,5 +1,6 @@
 import {
   getMovieInformartionActors,
+  getMovieInformartionCloseBtn,
   getMovieInformartionDialog,
   getMovieInformartionDirector,
   getMovieInformartionGenres,
@@ -11,6 +12,9 @@ import {
   getMovieInformartionYear,
 } from 'cypress/po-e2e/movie-information.po';
 import {
+  getHeaderLogo,
+  getHomeImage,
+  getHomeText,
   getSearchMovieBtn,
   visiteDashboardInterface,
 } from 'cypress/po-e2e/movies-dashboard.po';
@@ -72,5 +76,12 @@ describe('Movie informations', () => {
       .should('exist')
       .contains('Animation | Action | Adventure | Sci-Fi')
       .should('be.visible');
+    // Test if dialog closable
+    getMovieInformartionCloseBtn().click();
+    getMovieInformartionDialog().should('not.exist');
+    // Test go home logo
+    getHeaderLogo().click();
+    getHomeImage().should('be.visible');
+    getHomeText().should('be.visible');
   });
 });
