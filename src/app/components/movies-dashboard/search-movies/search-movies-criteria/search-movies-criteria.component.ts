@@ -5,25 +5,25 @@ import { CriteriaFormModel } from 'src/app/models/model';
 @Component({
   selector: 'app-search-movies-criteria',
   templateUrl: './search-movies-criteria.component.html',
-  styleUrls: ['./search-movies-criteria.component.scss']
+  styleUrls: ['./search-movies-criteria.component.scss'],
 })
 export class SearchMoviesCriteriaComponent {
   /*
-     Create a form group that contain the search criteria attributes.
-  */
+   *Create a form group that contain the search criteria attributes.
+   */
   searchForm: UntypedFormGroup = this.formBuilder.group({
     title: [''],
     type: ['Movie'],
-    releaseYear: ['']
+    releaseYear: [''],
   });
   Types = ['Movie', 'Series', 'Episode'];
-  @Output() searchMovies = new EventEmitter<CriteriaFormModel>()
-  constructor(private formBuilder: UntypedFormBuilder) { }
+  @Output() searchMovies = new EventEmitter<CriteriaFormModel>();
+  constructor(private formBuilder: UntypedFormBuilder) {}
+  /*
+   * Emit the form values to the parent component.
+   * Title value should be not empty.
+   */
   searchMovie() {
-    /* 
-        Emit the form values to the parent component.
-        Title value should be not empty.
-    */
-    this.searchMovies.emit(this.searchForm.value)
+    this.searchMovies.emit(this.searchForm.value);
   }
 }

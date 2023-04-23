@@ -13,7 +13,7 @@ export class MoviesDashboardComponent implements OnInit, OnDestroy {
   btnIsSelected = false;
   constructor(private router: Router) {}
   ngOnInit() {
-    // Select the search btn from search page (case when refresh search page)
+    // Select the search button (case when refresh search page)
     if (this.router.url === '/search') {
       this.btnIsSelected = true;
     }

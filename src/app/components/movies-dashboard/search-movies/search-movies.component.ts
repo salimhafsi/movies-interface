@@ -5,7 +5,7 @@ import {
   MovieInformationsModel,
   MoviesDataModel,
 } from 'src/app/models/model';
-import { MoviesService } from 'src/app/services/movies-service';
+import { MoviesService } from '../../../services/movies-service';
 import { isEmpty } from 'lodash';
 @Component({
   selector: 'search-movies',
