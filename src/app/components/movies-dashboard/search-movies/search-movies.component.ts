@@ -45,6 +45,11 @@ export class SearchMoviesComponent {
         tap(() => (this.moviesDataLoading = false))
       );
   }
+  /*
+   * Open dialog that contain the movie's informatios.
+   * Call a methode on the service that return the informations.
+   * Laod the movie's information using an api rest that return the infomartion by id.
+   */
   showMovieInformations(id: string) {
     this.showMovieInfoDialog = true;
     this.movieInfoLoading = true;

@@ -60,3 +60,8 @@
     box-shadow: none;
   }
 }
+:host ::ng-deep .p-dialog {
+  .p-dialog-header {
+    padding: 1.5rem 1em 0;
+  }
+}

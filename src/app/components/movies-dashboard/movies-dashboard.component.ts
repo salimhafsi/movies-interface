@@ -11,6 +11,7 @@ import { filter } from 'rxjs/operators';
 export class MoviesDashboardComponent implements OnInit, OnDestroy {
   private destroyed$ = new Subject<void>();
   btnIsSelected = false;
+  showAboutComponent = false;
   constructor(private router: Router) {}
   ngOnInit() {
     // Select the search button (case when refresh search page)
@@ -34,6 +35,9 @@ export class MoviesDashboardComponent implements OnInit, OnDestroy {
           ? (this.btnIsSelected = true)
           : (this.btnIsSelected = false);
       });
+  }
+  showAbout() {
+    this.showAboutComponent = true;
   }
   ngOnDestroy(): void {
     this.destroyed$.next();

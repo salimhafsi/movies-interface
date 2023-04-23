@@ -19,6 +19,7 @@ import { MovieInformationsComponent } from './search-movies/movie-informations/m
 import { SeparatorPipe } from 'src/app/pipes/separator.pipe';
 import { LanguageCodePipe } from 'src/app/pipes/language-code.pipe';
 import { CountyCodePipe } from 'src/app/pipes/country-code.pipe';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CountyCodePipe } from 'src/app/pipes/country-code.pipe';
     SeparatorPipe,
     CountyCodePipe,
     LanguageCodePipe,
+    AboutComponent,
   ],
   imports: [
     CommonModule,
