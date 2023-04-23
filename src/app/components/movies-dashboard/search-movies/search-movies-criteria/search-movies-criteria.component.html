@@ -5,7 +5,12 @@
         <span>Title</span>
       </div>
       <div>
-        <input type="text" formControlName="title" pInputText />
+        <input
+          type="text"
+          formControlName="title"
+          pInputText
+          data-cy="cy-title-input"
+        />
       </div>
     </div>
     <div class="content-criteria">
@@ -13,7 +18,11 @@
         <span>Type</span>
       </div>
       <div>
-        <p-dropdown [options]="Types" formControlName="type"></p-dropdown>
+        <p-dropdown
+          [options]="Types"
+          formControlName="type"
+          data-cy="cy-type-dropdown"
+        ></p-dropdown>
       </div>
     </div>
     <div class="content-criteria">
@@ -21,7 +30,12 @@
         <span>Year of release</span>
       </div>
       <div>
-        <input type="text" formControlName="releaseYear" pInputText />
+        <input
+          type="text"
+          formControlName="releaseYear"
+          pInputText
+          data-cy="cy-year-input"
+        />
       </div>
     </div>
     <div>
@@ -31,6 +45,7 @@
           'btn-diasabled': searchForm.controls['title'].value === ''
         }"
         (click)="searchMovie()"
+        data-cy="cy-serach-btn"
       ></p-button>
     </div>
   </form>

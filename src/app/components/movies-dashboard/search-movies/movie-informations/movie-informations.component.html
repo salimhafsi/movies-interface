@@ -1,7 +1,11 @@
 <div *ngIf="movieInfoLoading" class="loading">
   <i class="pi pi-spin pi-spinner loading-spinner"></i>
 </div>
-<div *ngIf="movieInformations" class="informations">
+<div
+  *ngIf="movieInformations"
+  class="informations"
+  data-cy="cy-movie-information-dialog"
+>
   <div class="informations-image">
     <img
       [src]="
@@ -11,57 +15,81 @@
       "
       width="100"
       height="150"
+      data-cy="cy-movie-poster"
     />
   </div>
   <div class="informations-txt">
     <div class="informations-txt-header">
-      <div class="informations-txt-header-title">
+      <div
+        class="informations-txt-header-title"
+        data-cy="cy-movie-information-title"
+      >
         {{ movieInformations.Title }}
       </div>
-      <div class="informations-txt-header-info">
+      <div
+        class="informations-txt-header-info"
+        data-cy="cy-movie-information-type"
+      >
         {{ movieInformations.Type | titlecase }},
-        <span class="informations-txt-header-info-year">{{
-          movieInformations.Year
-        }}</span>
+        <span
+          class="informations-txt-header-info-year"
+          data-cy="cy-movie-information-year"
+          >{{ movieInformations.Year }}</span
+        >
       </div>
     </div>
     <div class="informations-txt-content">
       <div *ngIf="movieInformations.Director !== 'N/A'">
         <span class="informations-txt-content-key">Directors: </span>
-        <span class="informations-txt-content-value">{{
-          movieInformations.Director | separatorPipe
-        }}</span>
+        <span
+          class="informations-txt-content-value"
+          data-cy="cy-movie-information-director"
+          >{{ movieInformations.Director | separatorPipe }}</span
+        >
       </div>
       <div *ngIf="movieInformations.Writer !== 'N/A'">
         <span class="informations-txt-content-key">Writers: </span>
-        <span class="informations-txt-content-value">{{
-          movieInformations.Writer | separatorPipe
-        }}</span>
+        <span
+          class="informations-txt-content-value"
+          data-cy="cy-movie-information-writers"
+          >{{ movieInformations.Writer | separatorPipe }}</span
+        >
       </div>
       <div *ngIf="movieInformations.Actors !== 'N/A'">
         <span class="informations-txt-content-key">Actors: </span>
-        <span class="informations-txt-content-value">{{
-          movieInformations.Actors | separatorPipe
-        }}</span>
+        <span
+          class="informations-txt-content-value"
+          data-cy="cy-movie-information-actors"
+          >{{ movieInformations.Actors | separatorPipe }}</span
+        >
       </div>
-      <div *ngIf="movieInformations.Country !== 'N/A'">
-        <span class="informations-txt-content-key">Origin: </span>
-        <span *ngFor="let country of movieInformations.Country.split(',')">
-          <span class="fi fi-{{ country | countyCodePipe | lowercase }}"></span>
-          <span> | </span>
+      <div>
+        <span *ngIf="movieInformations.Country !== 'N/A'">
+          <span class="informations-txt-content-key">Origin: </span>
+          <span *ngFor="let country of movieInformations.Country.split(',')">
+            <span
+              class="fi fi-{{ country | countyCodePipe | lowercase }}"
+              data-cy="cy-movie-information-origin"
+            ></span>
+            <span> | </span>
+          </span>
         </span>
         <span *ngIf="movieInformations.Language !== 'N/A'">
           <span class="informations-txt-content-key">Language: </span>
-          <span class="informations-txt-content-value">{{
-            movieInformations.Language | languageCodePipe
-          }}</span>
+          <span
+            class="informations-txt-content-value"
+            data-cy="cy-movie-information-language"
+            >{{ movieInformations.Language | languageCodePipe }}</span
+          >
         </span>
       </div>
       <div *ngIf="movieInformations.Genre !== 'N/A'">
         <span class="informations-txt-content-key">Genres: </span>
-        <span class="informations-txt-content-value">{{
-          movieInformations.Genre | separatorPipe
-        }}</span>
+        <span
+          class="informations-txt-content-value"
+          data-cy="cy-movie-information-genres"
+          >{{ movieInformations.Genre | separatorPipe }}</span
+        >
       </div>
     </div>
   </div>

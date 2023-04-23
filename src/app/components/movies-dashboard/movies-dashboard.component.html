@@ -1,6 +1,6 @@
 <div>
-  <div class="header" role="banner">
-    <div class="header-logo" [routerLink]="['/']">
+  <div class="header" role="banner" data-cy="cy-header">
+    <div class="header-logo" [routerLink]="['/']" data-cy="cy-header-logo">
       <img
         width="40"
         alt="movie reel Logo"
@@ -14,11 +14,16 @@
         icon="pi pi-search"
         [routerLink]="['/search']"
         [ngClass]="btnIsSelected ? 'select-btn' : 'unSelect-btn'"
+        data-cy="cy-search-movie-btn"
       ></p-button>
-      <p-button class="header-actions-about" label="ABOUT ME"></p-button>
+      <p-button
+        class="header-actions-about"
+        label="ABOUT ME"
+        data-cy="cy-about-btn"
+      ></p-button>
     </div>
   </div>
-  <div class="content">
+  <div class="content" data-cy="cy-content">
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -7,7 +7,7 @@ import * as countryCode from 'country-code-lookup';
 @Pipe({ name: 'countyCodePipe' })
 export class CountyCodePipe implements PipeTransform {
   transform(value: string): string {
-    // library is not support the symbol USA.
+    // library is not support the name USA.
     value === 'USA' ? (value = 'United States') : value;
     const code = countryCode.byCountry(value.trim());
     return code.iso2;
