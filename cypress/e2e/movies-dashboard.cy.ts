@@ -6,6 +6,8 @@ import {
   getSearchMovieBtn,
   getDashboardHeader,
   visiteDashboardInterface,
+  getAboutMeDialog,
+  getAboutMeDialogCloseBtn,
 } from 'cypress/po-e2e/movies-dashboard.po';
 
 describe('Movies dashborad', () => {
@@ -26,5 +28,10 @@ describe('Movies dashborad', () => {
       .should('exist')
       .contains('FIND THE INFO OF YOUR FAVORITE MOVIE')
       .should('be.visible');
+    // Test about me dialog that is display correctly
+    getAboutBtn().click();
+    getAboutMeDialog().should('be.visible');
+    getAboutMeDialogCloseBtn().click();
+    getAboutMeDialog().should('not.exist');
   });
 });

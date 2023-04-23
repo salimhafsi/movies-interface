@@ -16,6 +16,12 @@ export const getHomeImage = () => {
 export const getHomeText = () => {
   return cy.get('[data-cy=cy-home-text');
 };
+export const getAboutMeDialog = () => {
+  return cy.get('[data-cy=cy-about-dialog]');
+};
+export const getAboutMeDialogCloseBtn = () => {
+  return cy.get('.p-dialog-header-close');
+};
 export const visiteDashboardInterface = () => {
   return cy.visit('/');
 };
